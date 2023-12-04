@@ -55,3 +55,4 @@ D:\MySamples\InfuxDBPractice\InfuxDBPractice\obj\Debug\net7.0\refint\InfuxDBPrac
 D:\MySamples\InfuxDBPractice\InfuxDBPractice\obj\Debug\net7.0\InfuxDBPractice.pdb
 D:\MySamples\InfuxDBPractice\InfuxDBPractice\obj\Debug\net7.0\InfuxDBPractice.genruntimeconfig.cache
 D:\MySamples\InfuxDBPractice\InfuxDBPractice\obj\Debug\net7.0\ref\InfuxDBPractice.dll
+D:\MySamples\InfuxDBPractice\InfuxDBPractice\obj\Debug\net7.0\InfuxDBPractice.sourcelink.json

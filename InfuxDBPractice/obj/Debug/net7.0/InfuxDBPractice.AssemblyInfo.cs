@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InfuxDBPractice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2b6ab92475c810111649911127e3384948fb84d")]
 [assembly: System.Reflection.AssemblyProductAttribute("InfuxDBPractice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InfuxDBPractice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

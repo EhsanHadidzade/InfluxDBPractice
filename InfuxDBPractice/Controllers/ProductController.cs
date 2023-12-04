@@ -38,10 +38,25 @@ namespace InfuxDBPractice.Controllers
 
             using var client = new InfluxDBClient("http://localhost:8086", token);
 
-            await SetView(25, client, bucket, org);
+
+            _ = Task.Run(async () =>
+            {
+
+                using var clientNew = new InfluxDBClient("http://localhost:8086", token);
+                for (int i = 1; i < 100; i++)
+                {
+                    var view = new PageView(i);
+                    using (var writeApi = clientNew.GetWriteApi())
+                    {
+                        writeApi.WriteMeasurement(view, WritePrecision.Ms, bucket, org);
+                    }
+                }
+
+            });
+            //await SetView(25, client, bucket, org);
             //var query = "from(bucket: \"shoplonDev\") |> range(start: -1h)";
             var query = "from(bucket: \"shoplonDev\") |> range(start: -1h) |> filter(fn: (r) => r[\"_measurement\"] == \"PostView\")";
-            var queryPage = "from(bucket: \"shoplonDev\") |> range(start: -1h) |> filter(fn: (r) => r[\"_measurement\"] == \"PageView\")";
+            var queryPage = "from(bucket: \"shoplonDev\") |> range(start: -1d) |> filter(fn: (r) => r[\"_measurement\"] == \"PageView\")";
 
             var tables = await client.GetQueryApi().QueryAsync(queryPage, org);
 
@@ -59,7 +74,7 @@ namespace InfuxDBPractice.Controllers
                 var view = new PageView(i);
                 using (var writeApi = client.GetWriteApi())
                 {
-                    //writeApi.WriteMeasurement(view, WritePrecision.Ms, bucket, org);
+                    writeApi.WriteMeasurement(view, WritePrecision.Ms, bucket, org);
                 }
             }
         }
